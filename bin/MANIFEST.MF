@@ -1,0 +1,7 @@
+Class-Path: ak.jar .
+Main-Class: com.cometway.ak.AK
+Implementation-Title: Comet Way Agent Kernel
+Implementation-Version: 3.0
+Implementation-Vendor-Id: Comet Way, Inc.
+Implementation-URL: http://www.agentkernel.com
+

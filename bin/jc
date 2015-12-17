@@ -1,0 +1,12 @@
+#! /bin/sh
+
+# This is a shell script for compiling java class files into 
+# a common classes directory into the ~/ak/classes directory.
+# You may need to change the classpath if you are using Java 1.x
+# or have installed the Agent Kernel into a different location.
+
+echo Compiling...
+ls $*
+CLASSPATH=~/ak/classes
+javac -classpath ${CLASSPATH} -d ~/ak/classes $*
+
