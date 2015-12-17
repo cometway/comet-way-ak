@@ -58,7 +58,7 @@ package org.apache.oro.text.regex;
  */
 
 /*
- * $Id: Perl5Compiler.java,v 1.1.1.1 2003/03/31 19:51:48 paul Exp $
+ * $Id: Perl5Compiler.java,v 1.2 2011/10/08 03:22:39 paul Exp $
  */
 import java.util.*;
 
@@ -258,7 +258,7 @@ public final class Perl5Compiler implements PatternCompiler {
    * In effect, this method is the analog of the Perl5 quotemeta() builtin
    * method.
    * <p>
-   * @param pattern The pattern to convert.
+   * @param expression The pattern to convert.
    * @return A String containing a Perl5 regular expression corresponding to
    *         a literal interpretation of the pattern.
    */

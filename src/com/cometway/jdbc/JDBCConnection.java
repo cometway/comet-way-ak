@@ -22,6 +22,11 @@ import java.util.Map;
 import java.util.Properties;
 import java.util.Vector;
 
+/** These imports are required for JDK 1.6 */
+
+import java.sql.Array;
+import java.sql.SQLClientInfoException;
+import java.sql.Struct;
 
 /**
 * This class implements a pool-able JDBCConnection.
@@ -54,9 +59,10 @@ public class JDBCConnection implements Connection
 	/**
 	* Users will probably not need to call the constructor directly;
 	* the connection is typically created by a ConnectionPoolManager.
-	* @param con The JDBC Connection to use
-	* @param ownerPool The ThreadPool to use when performing
-	* lazy database modifications
+	* @param jdbcURL The JDBC URL used to open the Connection.
+	* @param connection The JDBC Connection to use
+	* @param ownerPool The ThreadPool to use when performing lazy database modifications
+	* @param reporter The ReporterInterface to use for reporting trace and diagnostic information.
 	*/
 
 	public JDBCConnection(String jdbcURL, Connection connection, JDBCConnectionPool ownerPool, ReporterInterface reporter)
@@ -881,9 +887,9 @@ public class JDBCConnection implements Connection
 	//--------------------------------------------------------------------------
 
 	
-/*
 	// The following methods are neccessary for compiling under JDK 1.6.x:
 
+/* begin JDK 1.6 added code */
 	public Struct createStruct(String s, Object[] o) throws SQLException
 	{
 		return connection.createStruct(s,o);
@@ -957,8 +963,7 @@ public class JDBCConnection implements Connection
 	{
 		return connection.getClientInfo(s);
 	}
-*/
-
+/* end JDK 1.6 added code */
 
 	//--------------------------------------------------------------------------
 	// Inner classes start here.

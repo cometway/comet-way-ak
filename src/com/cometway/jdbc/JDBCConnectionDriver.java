@@ -179,7 +179,7 @@ public class JDBCConnectionDriver implements Driver
 
 	/**
 	* This driver is not JDBC Compliant.
-	* @returns false;
+	* @return false;
 	*/
 
     public boolean jdbcCompliant()
